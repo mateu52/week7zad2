@@ -1,9 +1,9 @@
-//import App2 from "./component/zad2/App2";
-
+import Home from "./component/Home";
 function App() {
   return (
     <div >
-      <h1>Czesć</h1>
+      <h1>hello</h1>
+      <Home/>
     </div>
   );
 }
