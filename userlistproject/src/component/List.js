@@ -1,6 +1,10 @@
-import React from 'react';
 import "./userList.css";
+import React,  {useState } from 'react';
 function List({userData}) {
+    const [ id, setId ] = useState();
+    const handleId = (event) => {
+        setId(event.target.value);
+    }
     const checkVal = (value, text) => {
         if (!value) {
             return text;
@@ -25,11 +29,16 @@ function List({userData}) {
                             <p>{user.location.city}</p>
                             <p>{user.email}</p>
                             <p>{new Date(user.registered.date).toDateString()}</p>
-                            
+                            <button
+                                value = { user.login.uuid }
+                                onClick = { handleId }
+                            >
+                                Wyświetl
+                            </button>
                         </div>
                     </div>
                 )
-            })} 
+            })}
         </div>
     )
 }
