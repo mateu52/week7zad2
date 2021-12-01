@@ -1,6 +1,6 @@
 import "./userList.css";
 import React,  {useState } from 'react';
-function List({userData}) {
+function List({userData, importDetail }) {
     const [ id, setId ] = useState();
     const handleId = (event) => {
         setId(event.target.value);
@@ -31,7 +31,7 @@ function List({userData}) {
                             <p>{new Date(user.registered.date).toDateString()}</p>
                             <button
                                 value = { user.login.uuid }
-                                onClick = { handleId }
+                                onClick = { importDetail }
                             >
                                 Wyświetl
                             </button>

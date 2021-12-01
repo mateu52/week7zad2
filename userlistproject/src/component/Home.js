@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import List from './List';
+import App from '../App';
 import "./userList.css";
-function Home(){
+function Home({ importDetail }){
     const [users, setUsers] = useState([]);
     useEffect(() => {
         fetch('https://randomuser.me/api/?results=10')
@@ -14,7 +15,8 @@ function Home(){
     return (
             <div className="bodyApp">
                         <List
-                            userData={users} 
+                            userData={users}
+                            importDetail = { importDetail } 
                         />
             </div>
     )

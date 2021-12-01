@@ -19,12 +19,13 @@ function App() {
         <nav>
           <p><Link to="/">Front</Link></p>
           <p><Link to="/List">Lista</Link></p>
+          <p><Link to="/UserDetail">User details</Link></p>
         </nav>
 
         <Routes>
             <Route exact path="/" element={<Front />} />
-            <Route path="/List" element={<Home />} />
-            <Route path="/UserDeatail" element={<UserDetail />} />
+            <Route path="/List" element={<Home importDetail = { handleUser } />} />
+            <Route path="/UserDetail" element={<UserDetail dane = { user } />} />
         </Routes>
       </div>
     </Router>

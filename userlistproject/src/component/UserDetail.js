@@ -1,8 +1,11 @@
 
-function UserDetail() {
+function UserDetail( {dane }) {
     
     return(
-        <h2>details</h2>
+        <div>
+            <h2>details</h2>
+            <h1>{ dane }</h1>
+        </div>
     )
 }
 
