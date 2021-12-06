@@ -1,11 +1,11 @@
 
-function UserDetail( {dane }) {
-    
+function UserDetail( { img, name }) {
+    const im = JSON.stringify(img);
     return(
-        <div>
-            <h2>details</h2>
-            <h1>{ dane }</h1>
-        </div>
+        <>
+        <h3>{im}</h3>
+        <h3>{ img } {console.log({img})}, { name }</h3>
+        </>
     )
 }
 

@@ -8,24 +8,43 @@ import {
   Route,
   Link
 } from "react-router-dom";
-function App() {
-  const [ user, setUser ] = useState();
-  const handleUser = (event) => {
-    setUser(event.target.value);
+
+function useInput(event){
+  const [value, setValue ] = useState('');
+  const sendChange = ( event ) => {
+      setValue(event.target.value);
   }
+  return [ value ,sendChange ]; 
+};
+
+function App() {
+  
+
+  const [img, setImg] = useState("heY");
+  const [name, setName] = useState('xXx');
+
+  const [ user, setUser ] = useState();
+  const handleImg = (event ) => {
+    setImg(event.target.value);
+  }
+  
   return (
     <Router>
       <div>
         <nav>
           <p><Link to="/">Front</Link></p>
           <p><Link to="/List">Lista</Link></p>
-          <p><Link to="/UserDetail">User details</Link></p>
+          <p><Link to={`/UserDetail/${img}`}>User details</Link></p>
         </nav>
 
         <Routes>
             <Route exact path="/" element={<Front />} />
-            <Route path="/List" element={<Home importDetail = { handleUser } />} />
-            <Route path="/UserDetail" element={<UserDetail dane = { user } />} />
+            <Route path="/List" element={<Home importDetail = { handleImg } />} />
+            <Route path={`/UserDetail/${img}`} 
+              element={<UserDetail 
+                img = { img } 
+                name= { name }
+                />} />
         </Routes>
       </div>
     </Router>
