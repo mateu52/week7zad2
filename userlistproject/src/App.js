@@ -20,7 +20,7 @@ function useInput(event){
 function App() {
   
 
-  const [img, setImg] = useState("heY");
+  const [id, setImg] = useState("heY");
   const [name, setName] = useState('xXx');
 
   const [ user, setUser ] = useState();
@@ -34,16 +34,14 @@ function App() {
         <nav>
           <p><Link to="/">Front</Link></p>
           <p><Link to="/List">Lista</Link></p>
-          <p><Link to={`/UserDetail/${img}`}>User details</Link></p>
+          {/* <p><Link to={`/UserDetail/${id}`}>User details</Link></p> */}
         </nav>
 
         <Routes>
             <Route exact path="/" element={<Front />} />
             <Route path="/List" element={<Home importDetail = { handleImg } />} />
-            <Route path={`/UserDetail/${img}`} 
-              element={<UserDetail 
-                img = { img } 
-                name= { name }
+            <Route path='/UserDetail/:id'
+              element={<UserDetail id={id}
                 />} />
         </Routes>
       </div>

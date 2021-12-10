@@ -1,28 +1,46 @@
 /* eslint-disable react/jsx-no-undef */
 import "./userList.css";
-//import { Link, Route, Routes } from 'react-router-dom';
-import React,  {useState } from 'react';
+import { Link } from 'react-router-dom';
+import React from 'react';
+import UserDetail from "./UserDetail";
 //import UserDetail from "./UserDetail";
-function List({userData, importDetail }) {
-    const [ id, setId ] = useState("hello");
-    const handleId = (event) => {
-        setId(event.target.value);
-    }
-    const checkVal = (value, text) => {
-        if (!value) {
-            return text;
-        }
-        return value;
-    }
+function List({ userData  }) {
+    
+    
     return(
         <div className="userCss">
              {userData.map((user) => {
                 return (
                     <div key={user.login.uuid} className="userMap">
-                        <div className="inMap">
-                         
-                            <p value={user.picture.large} onClick={ setId } >
-                                <img alt="foto" src={user.picture.large} onChange={ importDetail} ></img></p>
+                        <div> 
+                            <Link to={`/UserDetail/${user.location.city}`}>
+                                <UserDetail
+                                    name = { user.name.first } surname={ user.name.last }
+                                    picture = { user.picture.large }
+                                    location = { user.location.street.name }
+                                    location1 = { user.location.street.number }
+                                    city = { user.location.city }
+                                    email = { user.email }
+                                    date = { user.registered.date }
+
+
+                                />
+                            </Link>
+                        </div>
+                    </div>
+                        
+                )
+            })}
+        </div>
+    )
+}
+
+export default List;
+/* 
+<p>{console.log(user.login.uuid)}
+                                <img alt="foto" src={user.picture.large} 
+                                value={ user.name.first } onChange={ handleId }
+                                ></img></p>
                                 
                             <p>
                                 {checkVal(user.name.first, "Nie podano imienia")} 
@@ -35,13 +53,6 @@ function List({userData, importDetail }) {
                             <p>{user.location.city}</p>
                             <p>{user.email}</p>
                             <p>{new Date(user.registered.date).toDateString()}</p>
-                            
-                        </div>
-                    </div>
-                )
-            })}
-        </div>
-    )
-}
 
-export default List;
+
+ */

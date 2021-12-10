@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import List from './List';
-import App from '../App';
 import "./userList.css";
 function Home({ importDetail }){
     const [users, setUsers] = useState([]);
@@ -15,7 +14,7 @@ function Home({ importDetail }){
     return (
             <div className="bodyApp">
                         <List
-                            userData={users}
+                            userData={ users }
                             importDetail = { importDetail } 
                         />
             </div>
@@ -23,3 +22,5 @@ function Home({ importDetail }){
     
 }
 export default Home;
+
+//Utworzyć route dla ścieżek komponentów
