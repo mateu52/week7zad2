@@ -1,7 +1,7 @@
-import Home from "./component/Home";
+import List from "./component/List";
 import Front from "./component/Front";
 import UserDetail from "./component/UserDetail";
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   BrowserRouter as Router,
   Routes,
@@ -9,24 +9,17 @@ import {
   Link
 } from "react-router-dom";
 
-function useInput(event){
-  const [value, setValue ] = useState('');
-  const sendChange = ( event ) => {
-      setValue(event.target.value);
-  }
-  return [ value ,sendChange ]; 
-};
 
 function App() {
-  
-
-  const [id, setImg] = useState("heY");
-  const [name, setName] = useState('xXx');
-
-  const [ user, setUser ] = useState();
-  const handleImg = (event ) => {
-    setImg(event.target.value);
-  }
+  const [users, setUsers] = useState([]);
+    useEffect(() => {
+        fetch('https://randomuser.me/api/?results=10')
+            .then((response) => response.json())
+            .then ((data) => {
+                setUsers(data.results);
+            })
+            .catch(error => console.error(error))
+    },[]);
   
   return (
     <Router>
@@ -38,11 +31,15 @@ function App() {
         </nav>
 
         <Routes>
-            <Route exact path="/" element={<Front />} />
-            <Route path="/List" element={<Home importDetail = { handleImg } />} />
-            <Route path='/UserDetail/:id'
-              element={<UserDetail id={id}
-                />} />
+            <Route exact path="/" element = { 
+              <Front /> } 
+            />
+            <Route path="/List" element = { 
+              <List data = { users } /> } 
+            />
+            <Route path='/UserDetail/:id' > 
+              <UserDetail user = { users } />
+            </Route>
         </Routes>
       </div>
     </Router>

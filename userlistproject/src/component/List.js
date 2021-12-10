@@ -4,16 +4,16 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import UserDetail from "./UserDetail";
 //import UserDetail from "./UserDetail";
-function List({ userData  }) {
+function List({ data  }) {
     
     
     return(
         <div className="userCss">
-             {userData.map((user) => {
-                return (
+             {data.map((user) => (
+                
                     <div key={user.login.uuid} className="userMap">
                         <div> 
-                            <Link to={`/UserDetail/${user.location.city}`}>
+                            <Link to={`/UserDetail/${user.login.uuid}`}>
                                 <UserDetail
                                     name = { user.name.first } surname={ user.name.last }
                                     picture = { user.picture.large }
@@ -22,15 +22,15 @@ function List({ userData  }) {
                                     city = { user.location.city }
                                     email = { user.email }
                                     date = { user.registered.date }
-
+                                    
 
                                 />
                             </Link>
                         </div>
                     </div>
                         
-                )
-            })}
+                
+             ))}
         </div>
     )
 }

@@ -1,21 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import List from './List';
 import "./userList.css";
-function Home({ importDetail }){
-    const [users, setUsers] = useState([]);
-    useEffect(() => {
-        fetch('https://randomuser.me/api/?results=10')
-            .then((response) => response.json())
-            .then ((data) => {
-                setUsers(data.results);
-            })
-            .catch(error => console.error(error))
-    },[]);
+function Home( ){
     return (
             <div className="bodyApp">
                         <List
                             userData={ users }
-                            importDetail = { importDetail } 
                         />
             </div>
     )
