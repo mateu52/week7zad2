@@ -10,7 +10,7 @@ const UserDetail = ( props ) => {
                 <img alt="foto" src={ props.picture } ></img></p>
                 
             <p>
-                { props.name[0] } 
+                { props.name } 
                 { props.surname }
             </p>
             <p>

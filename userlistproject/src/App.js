@@ -1,6 +1,6 @@
 import List from "./component/List";
 import Front from "./component/Front";
-import UserDetail from "./component/UserDetail";
+import UserInfo from "./component/UserInfo";
 import React, { useState, useEffect } from 'react'
 import {
   BrowserRouter as Router,
@@ -27,19 +27,18 @@ function App() {
         <nav>
           <p><Link to="/">Front</Link></p>
           <p><Link to="/List">Lista</Link></p>
-          {/* <p><Link to={`/UserDetail/${id}`}>User details</Link></p> */}
         </nav>
 
         <Routes>
             <Route exact path="/" element = { 
               <Front /> } 
             />
+            <Route path='/UserDetail/:id' element = { 
+              <UserInfo user = { users } /> } 
+            />
             <Route path="/List" element = { 
               <List data = { users } /> } 
             />
-            <Route path='/UserDetail/:id' > 
-              <UserDetail user = { users } />
-            </Route>
         </Routes>
       </div>
     </Router>
