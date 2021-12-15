@@ -1,7 +1,9 @@
 import List from "./component/List";
 import Front from "./component/Front";
 import UserInfo from "./component/UserInfo";
-import React, { useState, useEffect } from 'react'
+
+import React, { useState, useEffect } from 'react';
+
 import {
   BrowserRouter as Router,
   Routes,

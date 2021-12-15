@@ -1,7 +1,9 @@
 import React from 'react';
 import "./userList.css";
 import { useParams } from 'react-router-dom';
-const UserInfo= ({ user} ) => {
+
+const UserInfo = ( { user} ) => {
+
     const { id } = useParams();
     const { name, picture, email, location, registered } = user.find((user) => user.login.uuid === id)
     const person = name ? `${name.first} ${name.last}` : "no name";
@@ -18,7 +20,7 @@ const UserInfo= ({ user} ) => {
                 { location.street.name }: 
                 { location.street.number }
             </p>
-            <p>{ location.street.city}{console.log(user)}</p>
+
             <p>{ email }</p>
             <p>{ new Date( registered.date ).toDateString() }</p>
         

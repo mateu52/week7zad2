@@ -42,3 +42,6 @@
     text-decoration: none;
     color:black;
 }
+#map {
+    height: 180px;
+}

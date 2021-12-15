@@ -1,8 +1,9 @@
+/* eslint-disable react/jsx-no-undef */
 import "./userList.css";
 import { Link } from 'react-router-dom';
 import React from 'react';
 import UserDetail from "./UserDetail";
-const List = ({ data  }) => {
+const List = ({ data }) => {
     
     
     return(
@@ -30,7 +31,7 @@ const List = ({ data  }) => {
                 
              ))}
         </div>
-    );
-};
+    )
+}
 
 export default List;
