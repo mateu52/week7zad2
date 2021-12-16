@@ -1,7 +1,6 @@
 import "./userList.css";
 import React from 'react';
 
-
 const UserDetail = ( props ) => {
     
     return (
