@@ -13,7 +13,7 @@ import {
 
 
 function App() {
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState();
     useEffect(() => {
         fetch('https://randomuser.me/api/?results=10')
             .then((response) => response.json())

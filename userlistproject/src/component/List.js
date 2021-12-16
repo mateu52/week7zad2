@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-undef */
 import "./userList.css";
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import React from 'react';
 import UserDetail from "./UserDetail";
 const List = ({ data }) => {
@@ -12,7 +12,7 @@ const List = ({ data }) => {
                 
                     <div key={user.login.uuid} className="userMap">
                         
-                            <Link to={`/UserDetail/${user.login.uuid}`}>
+                            {/* <Link to={`/UserDetail/${user.login.uuid}`}> */}
                                 <UserDetail
                                     name = { user.name.first } surname={ user.name.last }
                                     picture = { user.picture.large }
@@ -24,7 +24,7 @@ const List = ({ data }) => {
                                     
 
                                 />
-                            </Link>
+                            {/* </Link> */}
                         
                     </div>
                         
