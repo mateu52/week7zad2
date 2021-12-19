@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-undef */
 import "./userList.css";
-//import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import React from "react";
 import UserDetail from "./UserDetail";
 const List = ({ data }) => {
