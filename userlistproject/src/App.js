@@ -25,18 +25,7 @@ function App() {
   
   return (
     <Router>
-      <Routes>
-            <Route exact path="/" element = { 
-              <Front /> } 
-            />
-      </Routes>
-    </Router>
-  );
-}
-
-export default App;
-
-{/* <div>
+      <div>
         <nav>
           <p><Link to="/">Front</Link></p>
           <p><Link to="/List">Lista</Link></p>
@@ -53,4 +42,11 @@ export default App;
               <List data = { users } /> } 
             />
         </Routes>
-      </div> */}
+      </div>
+    </Router>
+  );
+}
+
+export default App;
+
+
