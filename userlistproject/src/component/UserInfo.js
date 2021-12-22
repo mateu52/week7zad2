@@ -28,7 +28,7 @@ const UserInfo = ( { user} ) => {
             
             <p>
                 <Map 
-                    center={[location.coordinates.latitude,location.coordinates.longitude]}
+                    position={[location.coordinates.latitude,location.coordinates.longitude]}
                 />
             </p>
         
