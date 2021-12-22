@@ -12,7 +12,7 @@ const List = ({ data }) => {
                 
                     <div key={user.login.uuid} className="userMap">
                         
-                            <Link to={`/UserDetail/${user.login.uuid}`}>
+                            <Link to={`/UserDetail/${user.login.uuid}`} style={{ textDecoration: 'none' }}>
                                 <UserDetail
                                     name = { user.name.first } surname={ user.name.last }
                                     picture = { user.picture.large }

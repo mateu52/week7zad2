@@ -5,6 +5,9 @@
     font-style:italic;
     display: flex;
     flex-wrap: wrap;
+    text-decoration: none;
+    
+    text-decoration-style: none;
 }
 .userCss {
     display: flex;
@@ -12,6 +15,8 @@
     justify-content: space-around;
     align-items: center;
     font-weight: 600;
+    text-decoration: none;
+    
 }
 .userMap:first-child {
     margin: top 0;
@@ -20,14 +25,34 @@
     background-image:linear-gradient(90deg, #22c1c3, #fdb42d);
     margin:10px 20px 10px 20px; 
     padding: 10px 10px 10px 10px;
-    width: 300px;
-    height: 500px;
+    width: 220px;
+    height: 360px;
+    justify-items: center;
+    justify-content: center;
+    align-items:center;
+    display: flex;
+    flex-direction: column;
+    color:black;
+    text-decoration:none;
+    
+    
+}
+.userDetail {
+    background-image:linear-gradient(90deg, #22c1c3, #fdb42d);
+    margin:50px 10px 40px 30px; 
+    padding: 5px 30px 60px 30px;
+    width: 320px;
+    height: 560px;
     justify-items: center;
     justify-content: center;
     align-items:center;
     display: flex;
     flex-direction: column;
     
+}
+.userDetail p{
+    color:black;
+
 }
 .inMap p {
     justify-items: center;
@@ -36,13 +61,16 @@
     display: flex;
     flex-direction: column;
     color:black;
-    text-decoration: none;
 }
 .routerLink {
     text-decoration: none;
     color:black;
 }
 #map {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
      height: 200px; 
-     width: 270px;
+     width: 300px;
+     text-decoration: none;
 }

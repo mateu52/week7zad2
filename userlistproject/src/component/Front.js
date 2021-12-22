@@ -3,7 +3,7 @@ import React from 'react';
 import "./userList.css";
 function Front(){
      return (
-        <h3>Głowna strona</h3>
+        <h3 className='userMap'>Głowna strona</h3>
      );
     
 }

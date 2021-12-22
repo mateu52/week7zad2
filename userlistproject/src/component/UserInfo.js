@@ -11,7 +11,7 @@ const UserInfo = ( { user} ) => {
     const { name, picture, email, location, registered } = user.find((user) => user.login.uuid === id)
     const person = name ? `${name.first} ${name.last}` : "no name";
     return (
-        <div className="userMap"> 
+        <div className="userDetail"> 
         
             <p>
                 <img alt="foto" src={ picture.large } ></img></p>            

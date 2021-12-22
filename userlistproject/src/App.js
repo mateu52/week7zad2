@@ -1,7 +1,7 @@
 import List from "./component/List";
 import Front from "./component/Front";
 import UserInfo from "./component/UserInfo";
-
+import "./component/userList.css";
 import React, { useState, useEffect } from 'react';
 
 import {
@@ -24,11 +24,12 @@ function App() {
     },[]);
   
   return (
+
     <Router>
-      <div>
+      <div className="bodyApp">
         <nav>
-          <p><Link to="/">Front</Link></p>
-          <p><Link to="/List">Lista</Link></p>
+          <p><Link to="/" style={{ textDecoration: 'none' }}>Front</Link></p>
+          <p><Link to="/List" style={{ textDecoration: 'none' }}>Lista</Link></p>
         </nav>
 
         <Routes>
