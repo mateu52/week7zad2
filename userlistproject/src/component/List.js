@@ -21,7 +21,8 @@ const List = ({ data }) => {
                                     city = { user.location.city }
                                     email = { user.email }
                                     date = { user.registered.date }
-                                    
+                                    latitude={Number.parseInt(user.location.coordinates.latitude)}
+                                    longitude={Number.parseInt(user.location.coordinates.longitude)}                                    
 
                                 />
                             </Link>

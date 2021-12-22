@@ -1,6 +1,9 @@
 import React from 'react';
 import "./userList.css";
+import Map from './Map';
 import { useParams } from 'react-router-dom';
+import 'leaflet/dist/leaflet.css';
+//import { MapContainer, TileLayer, Popup, Marker } from 'react-leaflet';
 
 const UserInfo = ( { user} ) => {
 
@@ -11,8 +14,7 @@ const UserInfo = ( { user} ) => {
         <div className="userMap"> 
         
             <p>
-                <img alt="foto" src={ picture.large } ></img></p>
-                
+                <img alt="foto" src={ picture.large } ></img></p>            
             <p>
                 { person }
             </p>
@@ -23,6 +25,12 @@ const UserInfo = ( { user} ) => {
 
             <p>{ email }</p>
             <p>{ new Date( registered.date ).toDateString() }</p>
+            
+            <p>
+                <Map 
+                    center={[location.coordinates.latitude,location.coordinates.longitude]}
+                />
+            </p>
         
         </div>   
     )
